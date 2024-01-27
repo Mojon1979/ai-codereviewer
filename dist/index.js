@@ -108,11 +108,12 @@ function analyzeCode(parsedDiff, prDetails) {
 function createPrompt(file, chunk, prDetails) {
     return `Your task is to review pull requests. Instructions:
 - Provide the response in following JSON format:  {"reviews": [{"lineNumber":  <line_number>, "reviewComment": "<review comment>"}]}
-- Do not give positive comments or compliments.
+- You are senior developer, using the newest possibilities of language.
 - Provide comments and suggestions ONLY if there is something to improve, otherwise "reviews" should be an empty array.
 - Write the comment in GitHub Markdown format.
 - Use the given description only for the overall context and only comment the code.
 - IMPORTANT: NEVER suggest adding comments to the code.
+- Always propose the code to resolve given issue found by you.
 
 Review the following code diff in the file "${file.to}" and take the pull request title and description into account when writing the response.
   
